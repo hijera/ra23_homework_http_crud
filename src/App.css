@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+
+body {
+  font-family:Tahoma;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.note-item button:before {
+  content: ' \25CF';
+  font-size: 35px;
+  color: #c1c1c1;
+  position: absolute;
+  top: -15px;
+  left: -2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.note-item button:hover:before {
+  transition:color 1s ease;
+  color:#CC1111;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.note-item button:after {
+  content: '✖';
+  font-size: 9px;
+  color: #F1F1F1;
+  left: 5px;
+  position: absolute;
+  top: 4px;
+  font-weight: bold;
+  line-height: 9px;
+}
+
+
+.note-item button {
+
   color: white;
+  top: -40px;
+  right: -100%;
+  position: relative;
+  display: block;
+  /*  z-index:100000;*/
+  background: none;
+  border: none;
+
 }
 
-.App-link {
-  color: #61dafb;
+.note-item,
+.new-note textarea
+{
+  padding:5px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
+.new-note
+{
+  padding:5px;
+  border:1px solid #C1C1C1;
+  margin-top:20px;
+  display:inline-block;
+}
+
+.note-container
+{
+  display:flex;
+  flex-wrap: wrap;
+
+}
+
+.note-element
+{
+  border:1px solid black;
+  margin:3px;
+  padding:10px;
+  min-width:100px;
+  min-height:70px;
+}
+
+.crud-app
+{
+  width:70%;
+  margin:0 auto;
+}
+
+.note-element .note-content
+{
+  min-height:20px;
+}
+
+
+.button-update {
+
+  color: white;
+  padding:5px;
+  position: relative;
+  display: block;
+  /*  z-index:100000;*/
+  background: none;
+  border: none;
+
+}
+
+.button-update:before {
+   content: ' \25CF';
+   font-size: 35px;
+   color: #c1c1c1;
+   position: absolute;
+  top: -15px;
+      left: -2px;
+ }
+
+.button-update:hover:before {
+  color: #3ccc00;
+  transition:color 1s ease;
+}
+
+.button-update.active {
+  animation: rotate 1s 1;
+  transform-origin: 9px 10px;
+}
+
+.button-update:after {
+  content: "\f021";
+  font-family:"Font Awesome 5 Free";
+  font-size: 9px;
+  color: #F1F1F1;
+  left: 4px;
+  position: absolute;
+  top: 5px;
+  font-weight: bold;
+  line-height: 9px;
+}
+
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
+
   }
-  to {
+  50% {
+    transform: rotate(180deg);
+
+  }
+  100% {
     transform: rotate(360deg);
+
   }
 }
+
+.add-button
+{
+  height:28px;
+  border:1px solid #0F0F0F;
+  background-color:#FFFFFF;
+  vertical-align:top;
+  border-radius:100%;
+  margin-top:14px;
+  margin-left:5px;
+}
+
+textarea
+{
+  height:50px;
+}
+
+/* Chrome only */
