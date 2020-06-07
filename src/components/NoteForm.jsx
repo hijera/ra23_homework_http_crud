@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
 NoteForm.propTypes = {
-    onAdd: PropTypes.func.isRequired,
+    onAdd: PropTypes.func.isRequired
 };
 
 function NoteForm(props) {
